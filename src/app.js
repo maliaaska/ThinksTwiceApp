@@ -90,6 +90,7 @@ class Header extends React.Component {
                 <form onSubmit={this.handleAddOption}>
                     <input type="text" name="option"/>
                     <button>add an option!</button>
+                    <h1>Now ITS FIXED</h1>
                 </form>
              </div>
          )
