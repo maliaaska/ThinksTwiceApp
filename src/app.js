@@ -14,11 +14,30 @@ class IndecisionApp extends React.Component {
         };
     }
     componentDidMount() {
-        console.log('component did mount')
+        try {
+            const json = localStorage.getItem('options'); 
+            const options = JSON.parse(json);
+    
+            if(options) {
+                this.setState(() => ( {options: options })); 
+            }
+        }catch (e) {
+
+
+        }
+
+        
+
+        
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log('component did update');
+        if(prevState.options.length !== this.state.options.length){
+            const json = JSON.stringify(this.state.options);
+            localStorage.setItem('options', json)
+            console.log('component did update');
+        }
+        
     }
     componentWillUnmount() {
         console.log('componentWillUnmonut')
@@ -112,6 +131,7 @@ const Options = (props) => {
            >
         Remove All
         </button>
+        {props.options.length === 0 && <p> Please add an option to get started</p>}
         {
            props.options.map((option) => (
             <Option 
@@ -158,6 +178,9 @@ const Option = (props) => {
          this.setState(() => ({ error }));
          if (option){
             e.target.elements.option.value = "";
+         }
+         if(!error) {
+             e.target.elements.option.value = '';
          }
     }
      render() {
