@@ -1,8 +1,7 @@
 import React from 'react';
 import Option from './Option';
 
-const Options = (props) => {
-    return(
+const Options = (props) => (
         <div>
         <button 
            onClick={props.handleDeleteOptions}
@@ -18,10 +17,7 @@ const Options = (props) => {
              handleDeleteOption={props.handleDeleteOption} />
             ))
         }
-       
         </div>
-    )
-
-}
+);
 
 export default Options;
