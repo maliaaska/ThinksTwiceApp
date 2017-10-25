@@ -12,15 +12,15 @@ const decrementCount = ({ decrementBy = 1 } = {}) => ({
   decrementBy
 });
 
-const setCount = ({set = 55 } = {}) => ({
+const setCount = ({ set } = {}) => ({
   type: 'SET',
   set
 })
-const resetCount = ({reset = 0} = {}) => ({
+const resetCount = () => ({
   type: 'RESET',
-  reset
+  
 })
-const store = createStore((state = { count: 0}, action) => {  // This is default value of state
+const countReducer = (state = { count: 0}, action) => {  // This is default value of state
   switch (action.type){
     case 'INCREMENT':
       return {
@@ -36,12 +36,19 @@ const store = createStore((state = { count: 0}, action) => {  // This is default
     }
     case 'RESET':
       return {
-      count: state.count = action.reset
+      count: 0
     };
     default: 
       return state;
   }
-});
+}
+
+//Reducers
+//1. Reducers are pure function - It means that output is dependened by input
+//2. Never change state or actions
+//3. 
+
+const store = createStore(countReducer);
 
 const unsubscribe = store.subscribe(() => {           // We pass a single function to it and this function gets called 
   console.log(store.getState());  //everysingle time the store changes
@@ -64,4 +71,4 @@ store.dispatch(decrementCount({decrementBy: 10}));
 
 store.dispatch(decrementCount());
 
-store.dispatch(setCount());
+store.dispatch(setCount({ set: -50 }));
