@@ -46,7 +46,6 @@ const countReducer = (state = { count: 0}, action) => {  // This is default valu
 //Reducers
 //1. Reducers are pure function - It means that output is dependened by input
 //2. Never change state or actions
-//3. 
 
 const store = createStore(countReducer);
 
