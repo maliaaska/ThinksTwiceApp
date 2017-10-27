@@ -2,7 +2,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/playground/redux-ThinkTwice.js',
+    entry: './src/playground/hoc.js',
     output: {
         path: path.join(__dirname, 'public'),
         filename: 'bundle.js'
