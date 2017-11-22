@@ -1,9 +1,9 @@
 const add = (a, b) => a + b;
 const generateGreeting = (name = "Anonymous") => `Hello ${name}`
 test('should add two numbers', () => {
-  const result = add(3, 4);
+  const result = add(3, 8);
 
-  expect(result).toBe(7);
+  expect(result).toBe(11);
 });
 
 test('Should generate greeting from name', () => {
