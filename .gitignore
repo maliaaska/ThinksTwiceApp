@@ -38,3 +38,9 @@ docs/api/
 
 # DotEnv
 .env
+
+public/bundle.js
+public/bundle.js.map
+public/styles.css
+public/styles.css.map
+
