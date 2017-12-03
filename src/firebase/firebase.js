@@ -11,6 +11,22 @@ const config = {
 
 firebase.initializeApp(config);
 
-firebase.database().ref().set({
-  name: "Arkadiusz Milewski"
+const database = firebase.database();
+
+database.ref().set({
+  name: "Arkadiusz Milewski",
+  age: 26,
+  isSingle: true,
+  location: {
+    city: "Barcelona",
+    country: "Spain"
+  }
+});
+// database.ref().set('This is my data.');
+
+database.ref('age').set(27);
+database.ref('location/city').set("Amsterdam");
+database.ref('attributes').set({
+  height: 178,
+  weight:78
 });
