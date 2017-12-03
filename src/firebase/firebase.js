@@ -16,7 +16,11 @@ const database = firebase.database();
 database.ref().set({
   name: "Arkadiusz Milewski",
   age: 26,
-  isSingle: true,
+  stressLevel: 6,
+  job: {
+    title: 'sofware developer',
+    company: 'Google'
+  },
   location: {
     city: "Barcelona",
     country: "Spain"
@@ -25,6 +29,12 @@ database.ref().set({
   console.log('Data is saved!');
 }).catch((e) => {
   console.log('This failed.', e);
+});
+
+database.ref().update({
+  stressLevel: 9,
+  'job/company': 'Amazon',
+  'location/city': "Seattle"
 });
 
 // database
