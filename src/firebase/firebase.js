@@ -13,10 +13,41 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref().on('value', (snapshot) => {
-  const val = snapshot.val();
-  console.log(`${val.name} is a ${val.job.title} at ${val.job.company} `)
-})
+database.ref('expenses').push({
+  description: 'Do it like you should',
+  note: 'that is onlu temporary',
+  amount: 1000000,
+  createdAt: 1299
+}); 
+
+database.ref('expenses').push({
+  description: 'Course fee',
+  note: 'Thats easy',
+  amount: 232324,
+  createdAt: 122349
+}); 
+
+database.ref('expenses').push({
+  description: 'Flight Tickets',
+  note: 'thats gonna be soon',
+  amount: 363,
+  createdAt: 656299
+}); 
+
+// database.ref('notes/-L-XzKpO01AJDqVVmj82').remove();
+
+// database.ref('notes').push({
+//   title: 'Course of programming',
+//   body: "Just start doin' it"
+// });
+
+
+
+
+// database.ref().on('value', (snapshot) => {
+//   const val = snapshot.val();
+//   console.log(`${val.name} is a ${val.job.title} at ${val.job.company} `)
+// })
 
 // const onValueChange = database.ref().on('value', (snapshot) => {
 //   console.log(snapshot.val());
@@ -25,7 +56,7 @@ database.ref().on('value', (snapshot) => {
 // });
 
 // setTimeout(() => {
-//   database.ref('age').set(22);
+//   database.ref('age').set(22); 
 // }, 3500);
 
 // setTimeout(() => {
