@@ -13,17 +13,19 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref('expenses').on('child_removed', (snapshot) => {
-  console.log(snapshot.key, snapshot.val());
-});
+export { firebase, database as default }
 
-database.ref('expenses').on('child_changed', (snapshot) => {
-  console.log(snapshot.key, snapshot.val());
-});
+// database.ref('expenses').on('child_removed', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
 
-database.ref('expenses').on('child_added', (snapshot) => {
-  console.log(snapshot.key, snapshot.val());
-});
+// database.ref('expenses').on('child_changed', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
+
+// database.ref('expenses').on('child_added', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
 // database.ref('expenses')
 // .on('value', (snapshot) => {
 //   const expenses = [];
@@ -53,12 +55,12 @@ database.ref('expenses').on('child_added', (snapshot) => {
 //     console.log(expenses);
 //   });
 
-database.ref('expenses').push({
-  description: 'Do it like you should',
-  note: 'that is onlu temporary',
-  amount: 1000000,
-  createdAt: 1299
-}); 
+// database.ref('expenses').push({
+//   description: 'Do it like you should',
+//   note: 'that is onlu temporary',
+//   amount: 1000000,
+//   createdAt: 1299
+// }); 
 
 // database.ref('notes/-L-XzKpO01AJDqVVmj82').remove();
 
@@ -66,8 +68,6 @@ database.ref('expenses').push({
 //   title: 'Course of programming',
 //   body: "Just start doin' it"
 // });
-
-
 
 
 // database.ref().on('value', (snapshot) => {
