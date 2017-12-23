@@ -5,15 +5,19 @@ const promise = new Promise((resolve, reject) => {
       age: 38
     });
     reject('Something went wrong!');
-  }, 5000)
+  }, 5000);
   
 });
 console.log('before');
 
 promise.then((data) => {
-  console.log(data);
+  console.log('1',data);
 
-  return 'some text'
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('This is my other promise');
+    }, 5000);
+  });
 }).then((str) => {
   console.log('does this run?', str)
 }).catch((error) => {
