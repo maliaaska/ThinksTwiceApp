@@ -40,3 +40,5 @@ docs/api/
 .env
 
 public/dist/
+.env.test
+.env.development
