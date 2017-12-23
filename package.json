@@ -12,6 +12,9 @@
     "start": "node server/server.js",
     "heroku-postbuild": "yarn run build:prod"
   },
+  "engines": {
+    "node": "8.6.0"
+  },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
