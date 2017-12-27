@@ -7,7 +7,7 @@ import { Header } from '../../components/Header';
 
 test('should render Header correctly', () => {
   const wrapper = shallow(<Header startLogout={() => { }}/>);
-  expect(toJSON(wrapper)).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 test('should call startLogout on button click', () => {
