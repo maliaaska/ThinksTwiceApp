@@ -15,11 +15,5 @@ exports[`Should render ExpenseListItem  correctly 1`] = `
     -
     1st January, 1970
   </p>
-  <button
-    onClick={[Function]}
-    value="1"
-  >
-    Remove
-  </button>
 </div>
 `;

@@ -15,9 +15,7 @@ export const ExpenseListItem = ({dispatch, description, amount, createdAt, id}) 
       - 
       {moment(createdAt).format('Do MMMM, YYYY')}
     </p>
-    <button value={id}
-            onClick={() => {dispatch(removeExpense({ id }))}}
-    >Remove</button>
+     
   </div>
 );
 
